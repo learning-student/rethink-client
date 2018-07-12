@@ -1,8 +1,7 @@
-var Driver = require('./drivers/websocket')
-var Filter = require('./filter')
-var Subscribe = require('./subscribe')
-var Auth = require('./auth')
-
+import Driver from './drivers/websocket'
+import Filter from './filter'
+import Subscribe from './subscribe'
+import Auth from './auth'
 class Client {
 
     constructor(host = 'localhost', port = 8082, callback, options = {}) {
@@ -212,4 +211,4 @@ class Client {
 
 }
 
-module.exports = Client
+export default Client

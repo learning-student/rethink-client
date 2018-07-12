@@ -17,4 +17,4 @@ class Subscribe {
 
 }
 
-module.exports = Subscribe
+export default Subscribe
