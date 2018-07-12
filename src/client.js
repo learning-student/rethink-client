@@ -189,7 +189,7 @@ class Client {
      * @returns {Auth}
      */
     auth() {
-        return new Auth(this.setAuth.bind(this))
+        return new Auth(this.socket)
     }
 
     /**

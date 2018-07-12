@@ -10,8 +10,8 @@ class WebsocketDriver{
         this.ws.on('open', callback)
     }
 
-    sender(data){
-        return this.ws.call('run_command', data)
+    sender(data, command = 'run_command'){
+        return this.ws.call(command, data)
     }
 }
 
