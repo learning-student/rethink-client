@@ -47,14 +47,14 @@ class Client {
 
     }
 
-    token(token){
+    token(token) {
         this.setAuth({authType: 'token', token: token})
 
         return this
     }
 
 
-    unauthenticated(){
+    unauthenticated() {
         this.setAuth({authType: 'unauthenticated'})
     }
 
@@ -189,7 +189,7 @@ class Client {
      * @returns {Auth}
      */
     auth() {
-        return new Auth(this.socket)
+        return new Auth(this)
     }
 
     /**
@@ -200,6 +200,7 @@ class Client {
         var command = this.buildCommand()
         var response = this.socket.sender(command)
 
+        this.commands = []
 
         if (this.endpoint === 'changes') {
             return new Subscribe(command.id, this.addCallback.bind(this), this.socket.ws, response)
